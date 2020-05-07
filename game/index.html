@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>§A¦n¡AGitHub</title>
-  </head>
-  <body>
-    <h1>Ä±±o¼F®`</h1>
-  </body>
+
+<head>
+
+
+    <title>Max Cut</title>
+
+    <style>
+        canvas {
+            width: 100%;
+
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+    <br />
+    <button onclick="undo()">â†©</button>
+    <button onclick="restart()">restart</button>
+    <div id="score">0</div>
+    <div style="display: none;">
+        <img id="pin_cyan" width="30" height="30" src="./resources/cyan.png" />
+        <img id="pin_red" width="30" height="30" src="./resources/red.png" />
+    </div>
+</body>
+
+<script src="js/main.js"></script>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    // ctx.canvas.width = window.innerWidth;
+    // ctx.canvas.height = window.innerHeight;
+    //ctx.fillStyle = "blue";
+    //ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    var blockArray = [
+        //x1,y1,x2,y2,blockType 0=cut,touchCount
+        [450, 100, 200, 650, 0, 0],
+        [200, 650, 700, 650, 0, 0],
+        [700, 650, 450, 100, 1, 0],
+    ];
+    var pin = [
+        [450, 100, 0],
+        [200, 650, 1],
+        [700, 650, 0],
+    ]
+
+    init(ctx,blockArray,pin)
+
+
+
+
+</script>
+
 </html>
